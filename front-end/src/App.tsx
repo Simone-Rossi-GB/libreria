@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import './App.css'
+import {api} from 'front-end/src/api.js'
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -7,13 +8,14 @@ function App() {
   const [searchAutore, setSearchAutore] = useState('');
   const [showForm, setShowForm] = useState(false);
 
-    function loadBooks() {
-        consta data = await api.ge
-    }
-
     useEffect(() => {
       loadBooks();
   }, []);
+
+  function loadBooks() {
+        const data = await api.getBooks();
+        setBooks(data);
+    }
 
   return (
     <>
