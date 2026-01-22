@@ -50,8 +50,7 @@ def createBooks():
 @app.delete("/api/libri/<id>")
 def deleteBooks(id):
     global books
-
-    
+    pos = [val for book in books if book.id == id else False]
 
 @app.delete("/api/libri")
 def deleteAllBooks():
