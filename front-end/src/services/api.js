@@ -27,7 +27,7 @@ export const api = {
                 method: 'DELETE'
             });
 
-        if (!response.ok) throw new Error('Errore nell'eliminazione del libro');
+        if (!response.ok) throw new Error('Errore nell\'eliminazione del libro');
         return response.json()
     },
 
@@ -36,7 +36,7 @@ export const api = {
                 method: 'DELETE'
             });
 
-        if (!response.ok) throw new Error('Errore nell'eliminazione della libreria');
+        if (!response.ok) throw new Error('Errore nell\'eliminazione della libreria');
         return response.json()
     }
 };

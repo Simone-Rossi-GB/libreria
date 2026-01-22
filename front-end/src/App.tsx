@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
-import './App.css'
-import {api} from 'services/api.js'
+import './App.css';
+import {api} from './services/api';
 
 function App() {
   const [books, setBooks] = useState([]);

@@ -17,7 +17,7 @@ def genera_libri_fake():
 
     generi = ['Romanzo', 'Giallo', 'Fantasy', 'Thriller', 'Sci-Fi', 'Horror', 'Storico']
 
-    for _ in range(10):
+    for _ in range(20):
         data = {
             'id': str(uuid.uuid4()),
             'titolo': faker.catch_phrase(), # Frase casuale come titolo
