@@ -1,3 +1,5 @@
+import uuid
+
 from faker import Faker
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
@@ -25,7 +27,9 @@ def createBooks():
         # genero l'id del libro
 
         if 'id' not in data or not data['id']:
-            data['id'] = str()
+            data['id'] = str(uuid.uuid4())
+
+            
 
 @app.delete("/api/libri/id")
 def deleteBooks(id):
