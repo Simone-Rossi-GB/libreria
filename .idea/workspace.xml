@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="101d5d57-fc0d-4bf8-b054-a91246fb438c" name="Changes" comment="dev 1.1: created class Libro" />
+    <list default="true" id="101d5d57-fc0d-4bf8-b054-a91246fb438c" name="Changes" comment="dev 1.1: created class Libro">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1768549643560</updated>
-      <workItem from="1768549644608" duration="21267000" />
+      <workItem from="1768549644608" duration="22613000" />
     </task>
     <task id="LOCAL-00001" summary="dev 1.0: created project with back-end and front-end division">
       <option name="closed" value="true" />
