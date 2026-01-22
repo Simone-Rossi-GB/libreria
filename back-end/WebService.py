@@ -45,11 +45,13 @@ def createBooks():
         return jsonify(book.model_dump()), 201
 
     except ValidationError as e:
-        return jsonify("errore": )
+        return jsonify({"errore": e.errors()}), 400
 
-@app.delete("/api/libri/id")
+@app.delete("/api/libri/<id>")
 def deleteBooks(id):
+    global books
 
+    
 
 @app.delete("/api/libri")
 def deleteAllBooks():
