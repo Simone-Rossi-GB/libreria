@@ -67,8 +67,10 @@ def deleteBooks(id):
 
 @app.delete("/api/libri")
 def deleteAllBooks():
-    global books
+
+    books.clear()
     
+    return jsonify({"message": "All books deleted"}), 200
 
 if __name__ == "__main__":
     genera_libri_fake()
