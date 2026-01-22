@@ -18,8 +18,10 @@ function App() {
         setBooks(data);
     }
 
-  function handleAddBook()async (book) => {
-      await
+  function handleAddBook()async (newBook) => {
+      const book = await api.createBook(newBook);
+      setBooks([...books, book]);
+      setShowForm(false);
   }
 
   function hanleDeleteBook() async (id) => {
