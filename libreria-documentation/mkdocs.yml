@@ -1,0 +1,7 @@
+site_name: My Docs
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        import:
+        - https://docs.pydantic.dev/latest/objects.inv
