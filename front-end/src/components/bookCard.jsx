@@ -16,15 +16,22 @@ export default function bookCard({book, onDelete}) {
                     <p className="flex items-center gap-2">
                         <span>👤</span>
                         <span className="text-base-content/70">{book.autore}</span>
-                    </p >
-                    <p>
+                    </p>
+                    <p className="flex items-center gap-2">
                         <span>📅</span>
-                        <span>{book.anno}</span>
+                        <span className="text-base-content/70">{book.anno}</span>
                     </p>
                 </div>
 
                 <div className="card-actions justify-between items-center mt-4">
                     <div className="badge badge-primary">{book.genere}</div>
+                    <button
+                        className="btn btn-error btn-sm"
+                        onClick={() => onDelete(book.id)}
+                        title="Elimina libro"
+                    >
+                        🗑️
+                    </button>
                 </div>
             </div>
         </div>
