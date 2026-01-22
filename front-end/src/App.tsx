@@ -11,23 +11,28 @@ function App() {
 
     useEffect(() => {
       loadBooks();
-  }, []);
+    }, []);
 
-  function loadBooks() {
+  function loadBooks() async () => {
         const data = await api.getBooks();
         setBooks(data);
     }
 
-  function showAddBookForm() {
-      setShowForm(true);
-      return <>
-        <addBookForm></addBookForm>
-      </>
+  function handleAddBook()async (book) => {
+      await
+  }
+
+  function hanleDeleteBook() async (id) => {
+
+  }
+
+  function handleDeleteLibrary() async () => {
+
   }
 
   return (
     <>
-        <
+        <div></div>
     </>
   )
 }
