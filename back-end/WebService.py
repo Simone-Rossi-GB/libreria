@@ -7,15 +7,25 @@ app = Flask(__name__)
 CORS(app, origins=['http://localhost:3000'])
 
 faker = Faker()
-libri: list[Libro] = []
+books: list[Libro] = []
 
 def genera_libri_fake():
 
 
-@app.get("/libri")
-def getLibri():
+@app.get("/api/libri")
+def getBooks():
 
 
+@app.post("/api/libri")
+def createBooks():
+
+
+@app.delete("/api/libri/id")
+def deleteBooks(id):
+
+
+@app.delete("/api/libri")
+def deleteAllBooks():
 
 
 if __name__ == "__main__":
