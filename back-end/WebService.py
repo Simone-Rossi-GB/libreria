@@ -14,7 +14,17 @@ faker = Faker()
 books: list[Libro] = []
 
 def genera_libri_fake():
+    for _ in range(10):
+        data = {
+            'id': str(uuid.uuid4()),
+            'titolo': ,
+            'autore': ,
+            ''
+        }
 
+        book = Libro(**data)
+
+        books.append(book)
 
 @app.get("/api/libri")
 def getBooks():
@@ -69,7 +79,7 @@ def deleteBooks(id):
 def deleteAllBooks():
 
     books.clear()
-    
+
     return jsonify({"message": "All books deleted"}), 200
 
 if __name__ == "__main__":
