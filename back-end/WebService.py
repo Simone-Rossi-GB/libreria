@@ -3,6 +3,8 @@ import uuid
 from faker import Faker
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
+from pydantic.v1 import ValidationError
+
 from models import Libro
 
 app = Flask(__name__)
@@ -29,7 +31,21 @@ def createBooks():
         if 'id' not in data or not data['id']:
             data['id'] = str(uuid.uuid4())
 
-            
+        """
+        **dati "spacchetta" il dizionario
+        Ogni chiave diventa un parametro nominato
+        Pydantic valida automaticamente i dati
+        Se tutto OK → crea oggetto Libro
+        Se errori → lancia ValidationError
+        """
+        book = Libro(**data)
+
+        books.append(book)
+
+        return jsonify(book.model_dump()), 201
+
+    except ValidationError as e:
+        return jsonify("errore": )
 
 @app.delete("/api/libri/id")
 def deleteBooks(id):
