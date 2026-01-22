@@ -20,12 +20,16 @@ function App() {
 
   function handleAddBook()async (newBook) => {
       const book = await api.createBook(newBook);
-      setBooks([...books, book]);
+      // @ts-ignore
+        setBooks([...books, book]);
       setShowForm(false);
   }
 
   function hanleDeleteBook() async (id) => {
-
+      if (window.confirm('Confermi di voler eliminare il libro?')) {
+          await api.deleteBook(id);
+          setBooks(books.filter(book => book.id !== id))
+      }
   }
 
   function handleDeleteLibrary() async () => {
