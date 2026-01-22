@@ -22,7 +22,7 @@ def genera_libri_fake():
             'id': str(uuid.uuid4()),
             'titolo': faker.catch_phrase(), # Frase casuale come titolo
             'autore': f"{faker.first_name()} {faker.last_name()}",
-            'anno': str(faker.random_int(min=500, max=2026)),
+            'anno': str(faker.random_int(min=1950, max=2026)),
             'genere': faker.random_element(generi)
         }
 
@@ -66,7 +66,7 @@ def deleteBooks(id):
     book_found = None
 
     for book in books:
-        if book.id == id:
+        if book.id == str(id):
             book_found = book
             break
 
