@@ -13,27 +13,30 @@ function App() {
       loadBooks();
     }, []);
 
-  function loadBooks() = async () => {
+  const loadBooks = async () => {
         const data = await api.getBooks();
         setBooks(data);
     }
 
-  function handleAddBook() = async (newBook) => {
+  const handleAddBook = async (newBook) => {
       const book = await api.createBook(newBook);
       // @ts-ignore
         setBooks([...books, book]);
       setShowForm(false);
   }
 
-  function hanleDeleteBook() = async (id) => {
+  const hanleDeleteBook = async (id) => {
       if (window.confirm('Confermi di voler eliminare il libro?')) {
           await api.deleteBook(id);
           setBooks(books.filter(book => book.id !== id));
       }
   }
 
-  function handleDeleteLibrary() async () => {
-
+  const handleDeleteLibrary = async () => {
+      if (window.confirm('Confermi di voler eliminare l\'intera libreria?')) {
+          await api.deleteAllBooks();
+          setBooks([])
+      }
   }
 
   return (
