@@ -13,22 +13,22 @@ function App() {
       loadBooks();
     }, []);
 
-  function loadBooks() async () => {
+  function loadBooks() = async () => {
         const data = await api.getBooks();
         setBooks(data);
     }
 
-  function handleAddBook()async (newBook) => {
+  function handleAddBook() = async (newBook) => {
       const book = await api.createBook(newBook);
       // @ts-ignore
         setBooks([...books, book]);
       setShowForm(false);
   }
 
-  function hanleDeleteBook() async (id) => {
+  function hanleDeleteBook() = async (id) => {
       if (window.confirm('Confermi di voler eliminare il libro?')) {
           await api.deleteBook(id);
-          setBooks(books.filter(book => book.id !== id))
+          setBooks(books.filter(book => book.id !== id));
       }
   }
 
