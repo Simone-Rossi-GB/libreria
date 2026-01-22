@@ -14,12 +14,16 @@ faker = Faker()
 books: list[Libro] = []
 
 def genera_libri_fake():
+
+    generi = ['Romanzo', 'Giallo', 'Fantasy', 'Thriller', 'Sci-Fi', 'Horror', 'Storico']
+
     for _ in range(10):
         data = {
             'id': str(uuid.uuid4()),
             'titolo': ,
-            'autore': ,
-            ''
+            'autore': t"",
+            'anno': str(faker.random_int(min=500, max=2026)),
+            'genere': faker.random_element(generi)
         }
 
         book = Libro(**data)
