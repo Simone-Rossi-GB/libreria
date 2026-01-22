@@ -1,4 +1,5 @@
 export default function bookCard({book, onDelete}) {
+    // mostro solo parte dell'id perché l'uuid4 è molto lungo ma viene cmq usato per cancellare il libro
     return (
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
             <div className="card-body">
@@ -12,8 +13,18 @@ export default function bookCard({book, onDelete}) {
                 <h2 className="card-title">{book.titolo}</h2>
 
                 <div className="space-y-1 text-sm">
-                    <p></p>
+                    <p className="flex items-center gap-2">
+                        <span>👤</span>
+                        <span className="text-base-content/70">{book.autore}</span>
+                    </p >
+                    <p>
+                        <span>📅</span>
+                        <span>{book.anno}</span>
+                    </p>
+                </div>
 
+                <div className="card-actions justify-between items-center mt-4">
+                    <div className="badge badge-primary">{book.genere}</div>
                 </div>
             </div>
         </div>
