@@ -3,7 +3,7 @@ import uuid
 from faker import Faker
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
-from pydantic.v1 import ValidationError
+from pydantic import ValidationError
 
 from models import Libro
 
@@ -20,8 +20,8 @@ def genera_libri_fake():
     for _ in range(10):
         data = {
             'id': str(uuid.uuid4()),
-            'titolo': ,
-            'autore': t"",
+            'titolo': faker.catch_phrase(), # Frase casuale come titolo
+            'autore': f"{faker.first_name()} {faker.last_name()}",
             'anno': str(faker.random_int(min=500, max=2026)),
             'genere': faker.random_element(generi)
         }
@@ -63,8 +63,6 @@ def createBooks():
 
 @app.delete("/api/libri/<id>")
 def deleteBooks(id):
-    global books
-
     book_found = None
 
     for book in books:
