@@ -45,16 +45,30 @@ def createBooks():
         return jsonify(book.model_dump()), 201
 
     except ValidationError as e:
-        return jsonify({"errore": e.errors()}), 400
+        return jsonify({"error": e.errors()}), 400
 
 @app.delete("/api/libri/<id>")
 def deleteBooks(id):
     global books
-    pos = [val for book in books if book.id == id else False]
+
+    book_found = None
+
+    for book in books:
+        if book.id == id:
+            book_found = book
+            break
+
+    if not book_found:
+        return jsonify({"error": "Book not found"}), 404
+
+    books.remove(book_found)
+
+    return jsonify({"message": "Book deleted"}), 200
 
 @app.delete("/api/libri")
 def deleteAllBooks():
-
+    global books
+    
 
 if __name__ == "__main__":
     genera_libri_fake()
