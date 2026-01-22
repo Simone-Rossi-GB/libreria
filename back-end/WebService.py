@@ -14,6 +14,7 @@ def genera_libri_fake():
 
 @app.get("/api/libri")
 def getBooks():
+    return jsonify([book.model_dump() for book in books]), 200
 
 
 @app.post("/api/libri")
