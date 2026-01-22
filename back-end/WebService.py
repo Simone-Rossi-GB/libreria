@@ -1,5 +1,5 @@
 from faker import Faker
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
 from models import Libro
 
@@ -19,7 +19,13 @@ def getBooks():
 
 @app.post("/api/libri")
 def createBooks():
+    try:
+        data = request.get_json()
 
+        # genero l'id del libro
+
+        if 'id' not in data or not data['id']:
+            data['id'] = str()
 
 @app.delete("/api/libri/id")
 def deleteBooks(id):
