@@ -6,7 +6,7 @@ import addBookForm from './components/addBookForm'
 function App() {
   const [books, setBooks] = useState([]);
   const [searchAutore, setSearchAutore] = useState('');
-  const [searchAutore, setSearchAutore] = useState('');
+  const [searchGenere, setSearchGenere] = useState('');
   const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
@@ -40,12 +40,24 @@ function App() {
   }
 
   const filteredBooks = books.filter(book => {
-      const matchAutore = searchAutore === '' || book.autore.toLowerCase().includes(searchAutore.)
+      const matchAutore = searchAutore === '' || book.autore.toLowerCase().includes(searchAutore.toLowerCase());
+      const matchGenere = searchGenere === '' || book.genere.toLowerCase().includes(searchGenere.toLowerCase());
+
+      return matchAutore && matchGenere;
   });
 
   return (
     <>
-        <div></div>
+        <div className="min-h-screen bg-base-200 p-6">
+            <div className="max-w-7xl mx-auto">
+                {/* headers */}
+                <div className="navbar bg-base-100 shadow-xl rounded-box mb-6">
+                    <div className="flex-1">
+                        <h1 className="text-3xl font-bald "
+                    </div>
+                </div>
+            </div>
+        </div>
     </>
   )
 }
