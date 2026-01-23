@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react'
 import './App.css';
 import {api} from './services/api.js';
-import addBookForm from './components/addBookForm'
+import bookCard from './components/bookCard';
+import addBookForm from './components/addBookForm';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -67,8 +68,20 @@ function App() {
                 </div>
 
                 {showForm && (
-                    
+                    <div className="mb-6">
+                        <addBookForm onAdd={handleAddBook} />
+                    </div>
                 )}
+
+                {/* spazio per i filtri di ricerca per autore e genere */}
+                <div className="card bg-base-100 shadow-xl mb-6">
+                    <div className="card-body">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input>
+                                
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
