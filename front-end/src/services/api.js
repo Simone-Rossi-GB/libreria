@@ -1,9 +1,9 @@
-const API_URL = 'localhost:11000/api';
+const API_URL = 'http://localhost:11000/api';
 
 export const api = {
     async getBooks(){
         // preferisco specificare che metodo è anche se la fetch di default usa metodo get
-        const response = fetch(`${API_URL}/libri`, {
+        const response = await fetch(`${API_URL}/libri`, {
             method: 'GET'
         });
 
@@ -12,7 +12,7 @@ export const api = {
     },
 
     async createBook(book) {
-        const response = fetch(`${API_URL}/libri`, {
+        const response = await fetch(`${API_URL}/libri`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(book)
@@ -23,7 +23,7 @@ export const api = {
     },
 
     async deleteBook(id) {
-        const response = fetch(`${API_URL}/libri/${id}`, {
+        const response = await fetch(`${API_URL}/libri/${id}`, {
                 method: 'DELETE'
             });
 
@@ -32,7 +32,7 @@ export const api = {
     },
 
     async deleteAllBooks() {
-        const response = fetch(`${API_URL}/libri`, {
+        const response = await fetch(`${API_URL}/libri`, {
                 method: 'DELETE'
             });
 
