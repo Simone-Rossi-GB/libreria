@@ -86,14 +86,17 @@ export default function App() {
           </div>
         </div>
 
-        {/* Form controllato (requisito PDF) */}
+          {/*
+          Operatore && (AND logico):
+            Se filteredBooks.length === 0 è true → esegue il codice dopo &&
+            Se filteredBooks.length === 0 è false → non mostra nulla
+          */}
         {showForm && (
           <div className="mb-6">
             <AddBookForm onAdd={handleAdd} />
           </div>
         )}
 
-        {/* Filtri per AUTORE e GENERE (requisito PDF) */}
         <div className="card bg-base-100 shadow-xl mb-6">
           <div className="card-body">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
