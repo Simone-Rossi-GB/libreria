@@ -50,12 +50,26 @@ function App() {
     <>
         <div className="min-h-screen bg-base-200 p-6">
             <div className="max-w-7xl mx-auto">
+
                 {/* headers */}
                 <div className="navbar bg-base-100 shadow-xl rounded-box mb-6">
                     <div className="flex-1">
-                        <h1 className="text-3xl font-bald "
+                        <h1 className="text-3xl font-bald">📚 Gestione Libreria</h1>
+                    </div>
+                    <div className="flex-none">
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => { setShowForm(!showForm) }}
+                        >
+                            {showForm ? '❌ Chiudi' : '➕ Aggiungi Libro'}
+                        </button>
                     </div>
                 </div>
+
+                {showForm && (
+                    
+                )}
+
             </div>
         </div>
     </>
