@@ -17,6 +17,27 @@ export default function addBookForm({ onAdd }) {
     };
 
     const handleSubmit = (e) => {
-        
-    }
+        e.preventDefault();
+        onAdd(formData);
+        setFormData({
+            titolo: '',
+            autore: '',
+            anno: '',
+            genere: ''
+        });
+    };
+
+    return (
+        <>
+            <div className="card bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title"> ➕ Nuovo libro </h2>
+
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className={}
+                    </form>
+                </div>
+            </div>
+        </>
+    )
 }
