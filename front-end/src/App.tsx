@@ -102,9 +102,9 @@ function App() {
                 </div>
 
                 {/* spazio della UI per il libri. Note: filteredbooks contiene tutti i libri se non c'è nessun filtro */}
-                <div>
-                    {filteredBooks.filter(book => (
-                        <B
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {filteredBooks.map(book => (
+                        <bookCard key={book.id} book={book} onDelete={hanleDeleteBook}></bookCard>
                     ))}
                 </div>
 
@@ -123,6 +123,18 @@ function App() {
                         </div>
                     </div>
                 )}
+
+                {/* footers */}
+                <div className="stats shadow mt-6 w-fullstats shadow mt-6 w-full">
+                    <div className="stat">
+                        <div className=""></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
 
             </div>
         </div>
