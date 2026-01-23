@@ -34,7 +34,20 @@ export default function addBookForm({ onAdd }) {
                     <h2 className="card-title"> ➕ Nuovo libro </h2>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
-                        <div className={}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Titolo</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="titolo"
+                                    placeholder="Es. 1984"
+                                    className="input input-bordered"
+                                    value={formData.}
+                                />
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
