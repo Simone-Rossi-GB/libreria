@@ -77,11 +77,31 @@ function App() {
                 <div className="card bg-base-100 shadow-xl mb-6">
                     <div className="card-body">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <input>
-                                
+                            <input
+                                type="text"
+                                placeholder="🔍 cerca per autore..."
+                                className="input input-bordered w-full"
+                                value={searchAutore}
+                                onChange={(e) => setSearchAutore(e.target.value)}
+                            />
+                            <input
+                                type="text"
+                                placeholder="🔍 cerca per genere..."
+                                className="input input-bordered w-full"
+                                value={searchGenere}
+                                onChange={(e) => setSearchGenere(e.target.value)}
+                            />
+                            <button
+                                className="btn btn-error"
+                                onClick={handleDeleteLibrary}
+                            >
+                                🗑️ Elimina la libreria
+                            </button>
                         </div>
                     </div>
                 </div>
+
+                
 
             </div>
         </div>
