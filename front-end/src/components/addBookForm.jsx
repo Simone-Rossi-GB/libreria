@@ -35,6 +35,7 @@ export default function addBookForm({ onAdd }) {
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Titolo</span>
@@ -44,9 +45,61 @@ export default function addBookForm({ onAdd }) {
                                     name="titolo"
                                     placeholder="Es. 1984"
                                     className="input input-bordered"
-                                    value={formData.}
+                                    value={formData.titolo}
+                                    onChange={handleChange}
+                                    required
                                 />
                             </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Autore</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="autore"
+                                    placeholder="Es. George Orwell"
+                                    className="input input-bordered"
+                                    value={formData.autore}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Anno</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="anno"
+                                    placeholder="Es. 1949"
+                                    className="input input-bordered"
+                                    value={formData.anno}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Genere</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="genere"
+                                    placeholder="Es. Distopia"
+                                    className="input input-bordered"
+                                    value={formData.genere}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                        </div>
+
+                        <div className="card-actions justify-end">
+                            <button type="submit" className={}
                         </div>
                     </form>
                 </div>

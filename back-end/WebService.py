@@ -15,7 +15,7 @@ books: list[Libro] = []
 
 def genera_libri_fake():
 
-    generi = ['Romanzo', 'Giallo', 'Fantasy', 'Thriller', 'Sci-Fi', 'Horror', 'Storico']
+    generi = ['Romanzo', 'Giallo', 'Fantasy', 'Thriller', 'Sci-Fi', 'Horror', 'Storico', 'Distopia']
 
     for _ in range(20):
         data = {
