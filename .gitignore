@@ -3,6 +3,7 @@
 *.iml
 *.iws
 *.ipr
+*.xml
 
 # IDE - VSCode
 .vscode/

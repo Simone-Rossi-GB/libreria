@@ -39,6 +39,10 @@ function App() {
       }
   }
 
+  const filteredBooks = books.filter(book => {
+      const matchAutore = searchAutore === '' || book.autore.toLowerCase().includes(searchAutore.)
+  });
+
   return (
     <>
         <div></div>

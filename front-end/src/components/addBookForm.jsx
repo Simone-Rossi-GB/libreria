@@ -99,7 +99,9 @@ export default function addBookForm({ onAdd }) {
                         </div>
 
                         <div className="card-actions justify-end">
-                            <button type="submit" className={}
+                            <button type="submit" className="btn btn-success btn-block">
+                                ✅ Aggiungi Libro
+                            </button>
                         </div>
                     </form>
                 </div>
