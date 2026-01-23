@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react'
-import './App.css';
 import {api} from './services/api.js';
 import bookCard from './components/bookCard';
 import addBookForm from './components/addBookForm';

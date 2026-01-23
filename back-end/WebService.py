@@ -8,7 +8,7 @@ from pydantic import ValidationError
 from models import Libro
 
 app = Flask(__name__)
-CORS(app, origins=['http://localhost:3000'])
+CORS(app, origins=['*'])
 
 faker = Faker()
 books: list[Libro] = []
