@@ -101,7 +101,17 @@ function App() {
                     </div>
                 </div>
 
-                
+                {/* spazio della UI per il libri. Note: filteredbooks contiene tutti i libri se non c'è nessun filtro */}
+                <div>
+                    <div>
+                        <svg>
+                            <path></path>
+                        </svg>
+                        <span>
+                            
+                        </span>
+                    </div>
+                </div>
 
             </div>
         </div>
