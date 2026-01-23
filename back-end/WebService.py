@@ -61,6 +61,37 @@ def createBooks():
     except ValidationError as e:
         return jsonify({"error": e.errors()}), 400
 
+
+@app.put("/api/libri/<id>")
+def updateBook(id):
+    global books
+
+    try:
+        data = request.get_json()
+
+        # Mantieni l'ID originale dalla URL
+        data['id'] = id
+
+        # Valida con Pydantic
+        updatedBook = Libro(**data)
+
+        # Cerca e sostituisci
+        book_found = False
+        for i, book in enumerate(books):
+            if book.id == id:
+                books[i] = updatedBook
+                book_found = True
+                break
+
+        if not book_found:
+            return jsonify({"error": "Libro non trovato"}), 404
+
+        return jsonify(updatedBook.model_dump()), 200
+
+    except ValidationError as e:
+        return jsonify({"error": e.errors()}), 400
+
+
 @app.delete("/api/libri/<id>")
 def deleteBooks(id):
     book_found = None
@@ -86,4 +117,4 @@ def deleteAllBooks():
 
 if __name__ == "__main__":
     genera_libri_fake()
-    app.run("0.0.0.0", 11000, debug=True)
+    app.run("0.0.0.0", 11005, debug=True)

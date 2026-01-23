@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:11000/api';
+const API_URL = 'http://localhost:11005/api';
 
 export const api = {
     async getBooks(){
@@ -19,6 +19,17 @@ export const api = {
         });
 
         if (!response.ok) throw new Error('Errore nella creazione del libro');
+        return response.json()
+    },
+
+    async updateBook(book) {
+        const response = await fetch(`${API_URL}/libri/${id}`, {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(book)
+            });
+
+        if (!response.ok) throw new Error('Errore nella modifica del libro');
         return response.json()
     },
 
